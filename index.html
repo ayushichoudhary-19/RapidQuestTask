@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard-RapidQuest</title>
+    <link rel="icon" href="./assets/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="./assets/logo.PNG" alt="">
+        </div>
+        <div class="tabs-bar">
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <button class="tab-button active"><i class="fa-solid fa-house"></i></button>
+            <button class="tab-button"><i class="fa-regular fa-newspaper"></i></button>
+            <button class="tab-button"><i class="fa-regular fa-rectangle-list"></i></button>
+            <button class="tab-button"><i class="fa-regular fa-user"></i></button>
+        </div>
+        <div class="user-controls">
+            <button class="notifications"><i class="fa-regular fa-bell"></i></button>
+            <button class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="overview">
+            <div class="user">
+                <div class="profile">
+                    <img src="./assets/profilepic.png" alt="">
+                </div>
+                <div class="user-greet">
+                    <h1>Hi Mike,</h1>
+                    <p>welcome back.</p>
+                </div>
+            </div>
+            <div class="today">
+                <h4>Today</h4>
+                <div class="today-stats">
+                    <div class="today-1">
+                        <p class="amount">$19,892</p>
+                        <p class="amount-info">Account Balance</p>
+                    </div>
+                    <div class="today-2">
+                        <p class="amount">$4,000</p>
+                        <p class="amount-info">Year-to-Date Contributions</p>
+                    </div>
+                    <div class="today-3">
+                        <p class="amount">$1,892</p>
+                        <p class="amount-info">Total Interest</p>
+                    </div>
+                </div>
+                <button>I want to <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+            <div class="recents">
+                <h4>Recent Transactions</h4>
+                <p class="transection-date">2020-08-07</p>
+                <p class="transection-detail">Withdrawal Transfer to Bank-XXX11</p>
+                <hr>
+                <p class="transection-date">2020-08-07</p>
+                <p class="transection-detail">Withdrawal Transfer to Bank-XXX11</p>
+                <hr>
+                <p class="transection-date">2020-08-07</p>
+                <p class="transection-detail">Withdrawal Transfer to Bank-XXX11</p>
+                <hr>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <div class="dash-main">
+                <div class="heading">
+                    <p>Retirement Income</p>
+                    <h1>Starting Year 2056</h1>
+                </div>
+                <div class="stats-cards">
+                    <div class="card">
+                        <p class="value">$300,000</p>
+                        <p class="label">My Goal</p>
+                    </div>
+                    <div class="card">
+                        <p class="value">59%</p>
+                        <p class="label">Goal Achieved</p>
+                    </div>
+                    <div class="card">
+                        <p class="value">$300</p>
+                        <p class="label">Est. Monthly Income</p>
+                    </div>
+                </div>
+
+                <div class="contribution-chart">
+                    <h3>Contributions Overtime</h3>
+                    <canvas id="myChart" height="260"></canvas>
+                </div>
+                <div class="peer-compare">
+                    <h3>How do I compare to my peers?</h3>
+                    <p>These numbers represent current goal achievement</p>
+
+                    <div class="peer-chart">
+                        <div class="compare-controls">
+                            <p><b>Age: </b> Under 30 <i class="fa-solid fa-caret-down"></i></p>
+                            <hr>
+                            <p><b>Salary: </b> K 20 - K 30 <i class="fa-solid fa-caret-down"></i></p>
+                            <hr>
+                            <p><b>Gender: </b> Male <i class="fa-solid fa-caret-down"></i></p>
+                            <hr>
+                        </div>
+                        <div class="progress-charts">
+                            <div class="chart1">
+                                <div class="progress-bar"></div>
+                                <p>Average</p>
+                            </div>
+                            <div class="chart2">
+                                <div class="progress-bar"></div>
+                                <p>Top</p>
+                            </div>
+                            <div class="chart3">
+                                <div class="progress-bar"></div>
+                                <p>Me</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-update">
+                <div class="update-card">
+                    <h3>Retirement Strategy</h3>
+
+                    <div class="sliders">
+                        <p>Employee Contribution</p>
+                        <input type="range" name="contribution" id="contri-slider" max="100" min="0"
+                            class="slider">
+                        <span>12%</span>
+                        <p>Retirement Age</p>
+                        <input type="range" name="age" id="contri-slider" value="65" min="20" max="80"
+                            class="slider">
+                        <span>65</span>
+                    </div>
+                    
+                    <hr>
+
+                    <p>Employer Contribution <span>8.4%</span></p>
+
+                    <p>Interest Rate <span>5%</span></p>
+
+                    <button>Update</button>
+
+                    <div class="help">
+                        <p>View Help Docs ></p>
+                    </div>
+                </div>
+
+                <div class="ad">
+                    <p class="ad-title">Are you considering a <b>Housing Advance ?</b></p>
+                    <p class="ad-info">Limited time reduced interest</p>
+                    <p class="ad-more">Learn More ></p>
+                </div>
+                <div class="bottomdesign">
+                    <img src="assets/bottomdesign.png"/>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
